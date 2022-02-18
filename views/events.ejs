@@ -1,0 +1,16 @@
+<section class="events">
+    <h2 class="events__title" >Viðburðir á næstunni</h2>
+    <% if (events.length === 0) { %>
+        <p class="events__empty">Engir viðburðir</p>
+    <% } else { %>
+        <ul>
+            <% events.forEach((row) => { %>
+            <li>
+                <a class="events_eventTitle" href="/events/<%= row.slug %>"><%= row.title %></a>
+                
+                <div class="events__info"><%= row.info %></div>
+            </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</section>
